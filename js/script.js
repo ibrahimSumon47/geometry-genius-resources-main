@@ -14,71 +14,63 @@ document.getElementById("triangle-button").addEventListener("click", function ()
 
 // ! Rectangle card
 
-document.getElementById("rectangle-button").addEventListener("click", function(){
+document.getElementById("rectangle-button").addEventListener("click", function () {
     serialNo += 1;
 
     const rectangleWField = getCommonInputValue("rectangle-w-field");
     const rectangleLField = getCommonInputValue("rectangle-l-field");
     commonInputValidationOfElement(rectangleWField, rectangleLField);
-    const rectangleArea = (rectangleWField * rectangleLField);
+    const rectangleArea = (rectangleWField * rectangleLField).toFixed(2);
 
     const nameOfRectangle = document.getElementById("name-of-rectangle").innerText;
-    areaCalculationData(serialNo,nameOfRectangle, rectangleArea)
+    areaCalculationData(serialNo, nameOfRectangle, rectangleArea)
 })
 
 // ! Parallelogram Card
 
-document.getElementById("parallelogram-button").addEventListener("click", function(){
+document.getElementById("parallelogram-button").addEventListener("click", function () {
     serialNo += 1;
 
     const parallelogramBField = getCommonInnerTextValue("parallelogram-b-field");
     const parallelogramHField = getCommonInnerTextValue("parallelogram-H-field");
-    commonInputValidationOfElement(parallelogramBField, parallelogramHField);
-    const parallelogramArea = (parallelogramBField * parallelogramHField);
+    const parallelogramArea = (parallelogramBField * parallelogramHField).toFixed(2);
     const nameOfParallelogram = document.getElementById("name-of-parallelogram").innerText;
     areaCalculationData(serialNo, nameOfParallelogram, parallelogramArea);
 })
 
-//! Area Calculation Data
-function areaCalculationData(serialNo, nameOfT, totalEquation) {
-    const container = document.getElementById("table-container");
+//! Rhombus Card
+document.getElementById("rhombus-button").addEventListener("click", function () {
+    serialNo += 1;
 
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td class='text-xs font-medium'>${serialNo}</td>
-      <td class='text-xs font-medium'>${nameOfT}</td>
-      <td class='text-xs font-medium'>${totalEquation}cm<sup>2</sup></td>
-      <td class='text-xs font-medium'><button class="bg-blue-500 px-3 py-2 rounded-lg text-white font-normal">Covert to m<sup>2</sup></button></td>
-    ;
-    `
-    container.appendChild(tr);
-}
+    const rhombusD1Field = getCommonInnerTextValue("rhombus-d1-field");
+    const rhombusD2Field = getCommonInnerTextValue("rhombus-d2-field");
+    const rhombusArea = (0.5 * rhombusD1Field * rhombusD2Field).toFixed(2);
+    const nameOfRhombus = document.getElementById("name-of-rhombus").innerText;
+    areaCalculationData(serialNo, nameOfRhombus, rhombusArea);
+})
+
+// ! Pentagon Card
+
+document.getElementById("pentagon-button").addEventListener("click", function(){
+    serialNo += 1;
+
+    const pentagonPField = getCommonInnerTextValue("pentagon-p-field");
+    const pentagonBField = getCommonInnerTextValue("pentagon-b-field");
+    const pentagonArea = (0.5 * pentagonPField * pentagonBField).toFixed(2);
+    const nameOfPentagon = document.getElementById("name-of-pentagon").innerText;
+    areaCalculationData(serialNo, nameOfPentagon, pentagonArea);
+})
 
 
-//! common function-1
-function getCommonInputValue(elementId) {
-    const inputField = document.getElementById(elementId);
-    const inputNumberString = inputField.value;
-    const inputNumber = parseFloat(inputNumberString);
-    inputField.value = "";
-    return inputNumber;
-}
+// ! Ellipse Card
 
-function commonInputValidationOfElement(elementIdOne, elementIdTwo) {
-    if (isNaN(elementIdOne) || elementIdOne === "" || elementIdOne < 0) {
-        alert("Please provide a valid number");
-        return;
-    }
-    else if (isNaN(elementIdTwo) || elementIdTwo === "" || elementIdTwo < 0) {
-        alert("Please provide a valid number");
-        return;
-    }
-}
+document.getElementById("ellipse-button").addEventListener("click", function(){
+    serialNo += 1;
 
-// ! common function-2 
-function getCommonInnerTextValue(elementTextId){
-    const inputField = document.getElementById(elementTextId);
-    const inputNumberString = inputField.innerText;
-    const inputNumber = parseFloat(inputNumberString);
-    return inputNumber;
-  }
+    const ellipseAField = getCommonInnerTextValue("ellipse-a-field");
+    const ellipseBField = getCommonInnerTextValue("ellipse-b-field");
+    const piValue = 3.14;
+    const ellipseArea = (piValue * ellipseAField * ellipseBField).toFixed(2);
+    const nameOfEllipse = document.getElementById("name-of-ellipse").innerText;
+    areaCalculationData(serialNo, nameOfEllipse, ellipseArea);
+})

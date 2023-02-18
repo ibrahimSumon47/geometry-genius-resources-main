@@ -33,7 +33,9 @@
             <div class="flex flex-col md:flex-row lg:flex-row gap-4">
                 <div class="w-full md:-[70%] lg-[70%] mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <!--! Triangle card -->
-                    <div class="w-full card-bordered border-borderColor rounded-lg">
+                    <div onmouseover="this.style.backgroundColor = getRandomColor()"
+                        onmouseout="this.style.backgroundColor = ''"
+                        class="w-full card-bordered border-borderColor rounded-lg">
                         <figure class="px-10 pt-10 mx-auto">
                             <img src="/images/triangle.png" alt="Triangle" class="rounded-xl w-80 h-40" />
                         </figure>
@@ -65,7 +67,9 @@
                         </div>
                     </div>
                     <!--! Rectangle Card -->
-                    <div class="card w-full card-bordered border-borderColor rounded-lg">
+                    <div onmouseover="this.style.backgroundColor = getRandomColor()"
+                        onmouseout="this.style.backgroundColor = ''"
+                        class="card w-full card-bordered border-borderColor rounded-lg">
                         <figure class="px-10 pt-10">
                             <img src="/images/rectangle.png" alt="Rectangle" class="rounded-xl w-80 h-40" />
                         </figure>
@@ -77,23 +81,28 @@
                             </p>
                             <div class="flex gap-3 mb-8">
                                 <div>
-                                    <input id="rectangle-w-field" class="w-20 bg-inputColor px-2 py-1 rounded" type="text" placeholder="w" />
+                                    <input id="rectangle-w-field" class="w-20 bg-inputColor px-2 py-1 rounded"
+                                        type="text" placeholder="w" />
                                     <span>cm</span>
                                 </div>
                                 <div>
-                                    <input id="rectangle-l-field" class="w-20 bg-inputColor px-2 py-1 rounded" type="text" placeholder="l" />
+                                    <input id="rectangle-l-field" class="w-20 bg-inputColor px-2 py-1 rounded"
+                                        type="text" placeholder="l" />
                                     <span>cm</span>
                                 </div>
                             </div>
                             <div class="card-actions">
-                                <button id="rectangle-button" class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
+                                <button id="rectangle-button"
+                                    class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
                                     Calculate
                                 </button>
                             </div>
                         </div>
                     </div>
                     <!--! Parallelogram Card -->
-                    <div class="card w-full card-bordered border-borderColor rounded-lg">
+                    <div onmouseover="this.style.backgroundColor = getRandomColor()"
+                        onmouseout="this.style.backgroundColor = ''"
+                        class="card w-full card-bordered border-borderColor rounded-lg ">
                         <figure class="px-10 pt-10">
                             <img src="/images/parallelogram.png" alt="Parallelogram" class="rounded-xl w-80 h-40" />
                         </figure>
@@ -103,70 +112,83 @@
                                 Area (A) = b
                                 <i class="fa-solid fa-xmark"></i> h
                             </p>
-                            <p class="mb-6">b=<span id="parallelogram-b-field">10</span>cm, h=<span id="parallelogram-H-field">12</span>cm</p>
+                            <p class="mb-6">b=<span id="parallelogram-b-field">10</span>cm, h=<span
+                                    id="parallelogram-H-field">12</span>cm</p>
                             <div class="card-actions">
-                                <button id="parallelogram-button" class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
+                                <button id="parallelogram-button"
+                                    class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
                                     Calculate
                                 </button>
                             </div>
                         </div>
                     </div>
                     <!--! Rhombus Card -->
-                    <div class="card w-full card-bordered border-borderColor rounded-lg">
+                    <div onmouseover="this.style.backgroundColor = getRandomColor()"
+                        onmouseout="this.style.backgroundColor = ''"
+                        class="card w-full card-bordered border-borderColor rounded-lg">
                         <figure class="px-10 pt-10">
                             <img src="/images/rhombus.png" alt="Rhombus" class="rounded-xl w-80 h-40" />
                         </figure>
                         <div class="card-body items-center text-center">
-                            <h2 class="card-title">Rhombus</h2>
+                            <h2 id="name-of-rhombus" class="card-title">Rhombus</h2>
                             <p class="font-normal text-base text-cardColor">
                                 Area (A) = 0.5
                                 <i class="fa-solid fa-xmark"></i> d<sub>1</sub>
                                 <i class="fa-solid fa-xmark"></i> d<sub>2</sub>
                             </p>
                             <p class="mb-6">
-                                d<sub>1</sub> = <span>16</span>cm, d<sub>2</sub> =
-                                <span>8</span>cm
+                                d<sub>1</sub> = <span id="rhombus-d1-field">16</span>cm, d<sub>2</sub> =
+                                <span id="rhombus-d2-field">8</span>cm
                             </p>
                             <div class="card-actions">
-                                <button class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
+                                <button id="rhombus-button"
+                                    class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
                                     Calculate
                                 </button>
                             </div>
                         </div>
                     </div>
                     <!--! Pentagon Card-->
-                    <div class="card w-full card-bordered border-borderColor rounded-lg">
+                    <div onmouseover="this.style.backgroundColor = getRandomColor()"
+                        onmouseout="this.style.backgroundColor = ''"
+                        class="card w-full card-bordered border-borderColor rounded-lg">
                         <figure class="px-10 pt-10">
                             <img src="/images/pentagon.png" alt="Pentagon" class="rounded-xl w-80 h-40" />
                         </figure>
                         <div class="card-body items-center text-center">
-                            <h2 class="card-title">Pentagon</h2>
+                            <h2 id="name-of-pentagon" class="card-title">Pentagon</h2>
                             <p class="font-normal text-base text-cardColor">
                                 Area (A) = 0.5
                                 <i class="fa-solid fa-xmark"></i> p
                                 <i class="fa-solid fa-xmark"></i> b
                             </p>
-                            <p class="mb-6">p = <span>6</span>cm, b = <span>10</span>cm</p>
+                            <p class="mb-6">p = <span id="pentagon-p-field">6</span>cm, b = <span
+                                    id="pentagon-b-field">10</span>cm</p>
                             <div class="card-actions">
-                                <button class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
+                                <button id="pentagon-button"
+                                    class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
                                     Calculate
                                 </button>
                             </div>
                         </div>
                     </div>
                     <!--! Ellipse Card-->
-                    <div class="card w-full card-bordered border-borderColor rounded-lg">
+                    <div onmouseover="this.style.backgroundColor = getRandomColor()"
+                        onmouseout="this.style.backgroundColor = ''"
+                        class="card w-full card-bordered border-borderColor rounded-lg">
                         <figure class="px-10 pt-10">
                             <img src="/images/ellipse.png" alt="Ellipse" class="rounded-xl w-80 h-40" />
                         </figure>
                         <div class="card-body items-center text-center">
-                            <h2 class="card-title">Ellipse</h2>
+                            <h2 id="name-of-ellipse" class="card-title">Ellipse</h2>
                             <p class="font-normal text-base text-cardColor">
                                 Area (A) = <img class="inline" src="images/Vector.svg" />ab
                             </p>
-                            <p class="mb-6">a = <span>10</span>cm, b = <span>4</span>cm</p>
+                            <p class="mb-6">a = <span id="ellipse-a-field">10</span>cm, b = <span
+                                    id="ellipse-b-field">4</span>cm</p>
                             <div class="card-actions">
-                                <button class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
+                                <button id="ellipse-button"
+                                    class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
                                     Calculate
                                 </button>
                             </div>
@@ -195,6 +217,7 @@
             </div>
         </section>
     </main>
+    <script src="js/common.js"></script>
     <script src="js/script.js"></script>
 </body>
 
