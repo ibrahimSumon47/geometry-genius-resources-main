@@ -26,6 +26,19 @@ document.getElementById("rectangle-button").addEventListener("click", function()
     areaCalculationData(serialNo,nameOfRectangle, rectangleArea)
 })
 
+// ! Parallelogram Card
+
+document.getElementById("parallelogram-button").addEventListener("click", function(){
+    serialNo += 1;
+
+    const parallelogramBField = getCommonInnerTextValue("parallelogram-b-field");
+    const parallelogramHField = getCommonInnerTextValue("parallelogram-H-field");
+    commonInputValidationOfElement(parallelogramBField, parallelogramHField);
+    const parallelogramArea = (parallelogramBField * parallelogramHField);
+    const nameOfParallelogram = document.getElementById("name-of-parallelogram").innerText;
+    areaCalculationData(serialNo, nameOfParallelogram, parallelogramArea);
+})
+
 //! Area Calculation Data
 function areaCalculationData(serialNo, nameOfT, totalEquation) {
     const container = document.getElementById("table-container");
@@ -61,3 +74,11 @@ function commonInputValidationOfElement(elementIdOne, elementIdTwo) {
         return;
     }
 }
+
+// ! common function-2 
+function getCommonInnerTextValue(elementTextId){
+    const inputField = document.getElementById(elementTextId);
+    const inputNumberString = inputField.innerText;
+    const inputNumber = parseFloat(inputNumberString);
+    return inputNumber;
+  }
