@@ -12,7 +12,8 @@
 
 <body>
 <header>
-    <section class="">
+    <!-- navbar  -->
+    <section class="lg:mx-5">
         <div class="navbar bg-blue-200">
             <div class="navbar-start">
               <div>
@@ -21,13 +22,49 @@
               </div>
             </div>
             <div class="navbar-end">
-              <a class="btn text-slate-50 bg-blue-400">Blog</a>
+              <button class=" rounded-lg p-5 text-slate-50 bg-blue-400">Blog</button>
             </div>
           </div>
     </section>
 </header>
 <main>
-
+    <!-- card section  -->
+    <section class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Triangle  -->
+        <div class="card w-96 bg-red-500 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="/images/triangle.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Triangle</h2>
+              <p>Area (A) = 0.5 x b x h</p>
+              <input type="text" placeholder="b">
+              <label>cm</label>
+              <input type="text" placeholder="h">
+              <label>cm</label>
+              <div class="card-actions">
+                <button class="rounded-lg bg-blue-600 px-10 py-3 text-slate-50 font-medium">Calculate</button>
+              </div>
+            </div>
+          </div>
+          <!-- Rectangle -->
+        <div class="card w-96 bg-red-500 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="/images/rectangle.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Triangle</h2>
+              <p>Area (A) = w x l</p>
+              <input type="text" placeholder="w">
+              <label>cm</label>
+              <input type="text" placeholder="l">
+              <label>cm</label>
+              <div class="card-actions">
+                <button class="rounded-lg bg-blue-600 px-10 py-3 text-slate-50 font-medium">Calculate</button>
+              </div>
+            </div>
+          </div>
+    </section>
 </main>
 </body>
 
