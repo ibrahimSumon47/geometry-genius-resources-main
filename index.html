@@ -8,64 +8,194 @@
     <title>Geometry_Genius</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/f74cccefaa.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-<header>
-    <!-- navbar  -->
-    <section class="lg:mx-5">
-        <div class="navbar bg-blue-200">
-            <div class="navbar-start">
-              <div>
-                <h2 class="text-4xl">Interactive</h2>
-                <h4>Geometry Genius</h4>
-              </div>
+    <header>
+        <!--! navbar  -->
+        <section class="lg:mx-10">
+            <div class="navbar bg-blue-200 rounded-lg">
+                <div class="navbar-start">
+                    <div>
+                        <h2 class="text-4xl">Interactive</h2>
+                        <h4>Geometry Genius</h4>
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <button class=" rounded-lg p-5 text-slate-50 bg-blue-400">Blog</button>
+                </div>
             </div>
-            <div class="navbar-end">
-              <button class=" rounded-lg p-5 text-slate-50 bg-blue-400">Blog</button>
+        </section>
+    </header>
+    <main>
+        <section class="mt-6 mx-10 mb-12">
+            <div class="flex flex-col md:flex-row lg:flex-row gap-4">
+                <div class="w-full md:-[70%] lg-[70%] mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!--! Triangle card -->
+                    <div class="w-full card-bordered border-borderColor rounded-lg">
+                        <figure class="px-10 pt-10 mx-auto">
+                            <img src="/images/triangle.png" alt="Triangle" class="rounded-xl w-80 h-40" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 id="name-of-triangle" class="card-title">Triangle</h2>
+                            <p class="font-normal text-base text-cardColor">
+                                Area (A) = 0.5
+                                <i class="fa-solid fa-xmark"></i> b
+                                <i class="fa-solid fa-xmark"></i> h
+                            </p>
+                            <div class="flex gap-3 mb-8">
+                                <div>
+                                    <input id="triangle-b-field" class="w-20 bg-inputColor px-2 py-1 rounded"
+                                        type="text" placeholder="b" />
+                                    <span>cm</span>
+                                </div>
+                                <div>
+                                    <input id="triangle-h-field" class="w-20 bg-inputColor px-2 py-1 rounded"
+                                        type="text" placeholder="h" />
+                                    <span>cm</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button id="triangle-button"
+                                    class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
+                                    Calculate
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--! Rectangle Card -->
+                    <div class="card w-full card-bordered border-borderColor rounded-lg">
+                        <figure class="px-10 pt-10">
+                            <img src="/images/rectangle.png" alt="Rectangle" class="rounded-xl w-80 h-40" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 id="name-of-rectangle" class="card-title">Rectangle</h2>
+                            <p class="font-normal text-base text-cardColor">
+                                Area (A) = w
+                                <i class="fa-solid fa-xmark"></i> l
+                            </p>
+                            <div class="flex gap-3 mb-8">
+                                <div>
+                                    <input id="rectangle-w-field" class="w-20 bg-inputColor px-2 py-1 rounded" type="text" placeholder="w" />
+                                    <span>cm</span>
+                                </div>
+                                <div>
+                                    <input id="rectangle-l-field" class="w-20 bg-inputColor px-2 py-1 rounded" type="text" placeholder="l" />
+                                    <span>cm</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button id="rectangle-button" class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
+                                    Calculate
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--! Parallelogram Card -->
+                    <div class="card w-full card-bordered border-borderColor rounded-lg">
+                        <figure class="px-10 pt-10">
+                            <img src="/images/parallelogram.png" alt="Parallelogram" class="rounded-xl w-80 h-40" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title">Parallelogram</h2>
+                            <p class="font-normal text-base text-cardColor">
+                                Area (A) = b
+                                <i class="fa-solid fa-xmark"></i> h
+                            </p>
+                            <p class="mb-6">b=<span>10</span>cm, h=<span>12</span>cm</p>
+                            <div class="card-actions">
+                                <button class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
+                                    Calculate
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--! Rhombus Card -->
+                    <div class="card w-full card-bordered border-borderColor rounded-lg">
+                        <figure class="px-10 pt-10">
+                            <img src="/images/rhombus.png" alt="Rhombus" class="rounded-xl w-80 h-40" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title">Rhombus</h2>
+                            <p class="font-normal text-base text-cardColor">
+                                Area (A) = 0.5
+                                <i class="fa-solid fa-xmark"></i> d<sub>1</sub>
+                                <i class="fa-solid fa-xmark"></i> d<sub>2</sub>
+                            </p>
+                            <p class="mb-6">
+                                d<sub>1</sub> = <span>16</span>cm, d<sub>2</sub> =
+                                <span>8</span>cm
+                            </p>
+                            <div class="card-actions">
+                                <button class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
+                                    Calculate
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--! Pentagon Card-->
+                    <div class="card w-full card-bordered border-borderColor rounded-lg">
+                        <figure class="px-10 pt-10">
+                            <img src="/images/pentagon.png" alt="Pentagon" class="rounded-xl w-80 h-40" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title">Pentagon</h2>
+                            <p class="font-normal text-base text-cardColor">
+                                Area (A) = 0.5
+                                <i class="fa-solid fa-xmark"></i> p
+                                <i class="fa-solid fa-xmark"></i> b
+                            </p>
+                            <p class="mb-6">p = <span>6</span>cm, b = <span>10</span>cm</p>
+                            <div class="card-actions">
+                                <button class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
+                                    Calculate
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--! Ellipse Card-->
+                    <div class="card w-full card-bordered border-borderColor rounded-lg">
+                        <figure class="px-10 pt-10">
+                            <img src="/images/ellipse.png" alt="Ellipse" class="rounded-xl w-80 h-40" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title">Ellipse</h2>
+                            <p class="font-normal text-base text-cardColor">
+                                Area (A) = <img class="inline" src="images/Vector.svg" />ab
+                            </p>
+                            <p class="mb-6">a = <span>10</span>cm, b = <span>4</span>cm</p>
+                            <div class="card-actions">
+                                <button class="px-14 py-5 bg-sky-600 rounded-lg text-slate-50 font-medium">
+                                    Calculate
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--! Area Calculation -->
+                <div class="w-full md:w-[30%] lg:w-[30%] mt-5">
+                    <div class="card w-full h-96 card-bordered border-borderColor rounded-lg text-center">
+                        <h3 class="text-base font-bold underline mt-3">
+                            Area Calculation
+                        </h3>
+                        <table class="table mt-3 w-full">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Name</th>
+                                    <th>Total</th>
+                                    <th>Convert</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-container"></tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-          </div>
-    </section>
-</header>
-<main>
-    <!-- card section  -->
-    <section class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Triangle  -->
-        <div class="card w-96 bg-red-500 shadow-xl">
-            <figure class="px-10 pt-10">
-              <img src="/images/triangle.png" alt="Shoes" class="rounded-xl" />
-            </figure>
-            <div class="card-body items-center text-center">
-              <h2 class="card-title">Triangle</h2>
-              <p>Area (A) = 0.5 x b x h</p>
-              <input type="text" placeholder="b">
-              <label>cm</label>
-              <input type="text" placeholder="h">
-              <label>cm</label>
-              <div class="card-actions">
-                <button class="rounded-lg bg-blue-600 px-10 py-3 text-slate-50 font-medium">Calculate</button>
-              </div>
-            </div>
-          </div>
-          <!-- Rectangle -->
-        <div class="card w-96 bg-red-500 shadow-xl">
-            <figure class="px-10 pt-10">
-              <img src="/images/rectangle.png" alt="Shoes" class="rounded-xl" />
-            </figure>
-            <div class="card-body items-center text-center">
-              <h2 class="card-title">Triangle</h2>
-              <p>Area (A) = w x l</p>
-              <input type="text" placeholder="w">
-              <label>cm</label>
-              <input type="text" placeholder="l">
-              <label>cm</label>
-              <div class="card-actions">
-                <button class="rounded-lg bg-blue-600 px-10 py-3 text-slate-50 font-medium">Calculate</button>
-              </div>
-            </div>
-          </div>
-    </section>
-</main>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
